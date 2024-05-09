@@ -45,7 +45,6 @@ class _NewContactViewState extends State<NewContactView> {
             child: const Text('Add to list'),
             onPressed: () {
               final contact = Contact(name: _controller.text);
-
               ContactBook().add(contact: contact);
               Navigator.of(context).pop();
             },
