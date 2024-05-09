@@ -44,17 +44,33 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: ListView.builder(
-        itemCount: contactBook.length,
-        itemBuilder: (context, index) {
-          final contact = contactBook.contact(atIndex: index);
-          return ListTile(title: Text(contact!.name));
+      body: ValueListenableBuilder(
+        valueListenable: ContactBook(),
+        builder: (context, value, child) {
+          return ListView.builder(
+            itemCount: value.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Dismissible(
+                  key: ValueKey(value[index].id),
+                  background: Container(color: Colors.red),
+                  onDismissed: (direction) {
+                    value.remove(value[index]);
+                  },
+                  child: ListTile(
+                    title: Text(value[index].name),
+                    tileColor: Colors.grey,
+                  ),
+                ),
+              );
+            },
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed('/new-contact');
-          setState(() {});
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

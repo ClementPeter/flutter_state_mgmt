@@ -28,7 +28,6 @@ class _NewContactViewState extends State<NewContactView> {
 
   @override
   Widget build(BuildContext context) {
-    //final contactBook = ContactBook();
     return Scaffold(
       appBar: AppBar(
         title: const Text('state mgmt'),
