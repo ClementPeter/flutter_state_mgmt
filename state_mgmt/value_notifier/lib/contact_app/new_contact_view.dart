@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:value_notifier/contact.dart';
-import 'package:value_notifier/contact_book.dart';
+import 'package:value_notifier/contact_app/contact.dart';
+import 'package:value_notifier/contact_app/contact_book.dart';
 
 class NewContactView extends StatefulWidget {
   const NewContactView({super.key});

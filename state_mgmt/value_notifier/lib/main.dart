@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:value_notifier/contact_book.dart';
-import 'package:value_notifier/new_contact_view.dart';
+import 'package:value_notifier/contact_app/contact_book.dart';
+import 'package:value_notifier/contact_app/new_contact_view.dart';
 
+/* Contact APP main.dart */
 void main() {
   runApp(const MyApp());
 }
@@ -47,19 +48,23 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ValueListenableBuilder(
         valueListenable: ContactBook(),
         builder: (context, value, child) {
+          final contacts = value;
           return ListView.builder(
-            itemCount: value.length,
+            itemCount: contacts.length,
             itemBuilder: (context, index) {
+              final contact = contacts[index];
+
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Dismissible(
-                  key: ValueKey(value[index].id),
+                  key: ValueKey(contact.id),
                   background: Container(color: Colors.red),
                   onDismissed: (direction) {
-                    value.remove(value[index]);
+                    //value.remove(contact);
+                    ContactBook().remove(contact: contact);
                   },
                   child: ListTile(
-                    title: Text(value[index].name),
+                    title: Text(contact.name),
                     tileColor: Colors.grey,
                   ),
                 ),

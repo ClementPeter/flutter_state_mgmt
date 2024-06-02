@@ -44,6 +44,8 @@ class _NewContactViewState extends State<NewContactView> {
           ElevatedButton(
             child: const Text('Add to list'),
             onPressed: () {
+              //setstate is not needed here since the UI to be rebuilt isnt here
+
               final contact = Contact(name: _controller.text);
               ContactBook().add(contact: contact);
               Navigator.of(context).pop();
