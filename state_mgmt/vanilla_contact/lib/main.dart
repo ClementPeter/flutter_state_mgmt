@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
         itemCount: contactBook.length,
         itemBuilder: (context, index) {
-          final contact = contactBook.contactIndex(atIndex: index);
+          final contact = contactBook.contactAtIndex(atIndex: index);
           return ListTile(title: Text(contact!.name));
         },
       ),
