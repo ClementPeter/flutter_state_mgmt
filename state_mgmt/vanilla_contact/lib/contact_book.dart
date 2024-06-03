@@ -37,7 +37,7 @@ class ContactBook {
   }
 
   //6. Access _contacts data using it's index
-  Contact? contact({required int atIndex}) {
+  Contact? contactIndex({required int atIndex}) {
     return _contacts.length > atIndex ? _contacts[atIndex] : null;
   }
 }
