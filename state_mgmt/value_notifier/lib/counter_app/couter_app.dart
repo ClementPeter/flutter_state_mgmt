@@ -26,15 +26,6 @@ class _CounterAppState extends State<CounterApp> {
             const Text(
               'Count:',
             ),
-            // ValueListenableBuilder<int>(
-            //   valueListenable: counter.count,
-            //   builder: (BuildContext context, int value, child) {
-            //     return Text(
-            //       '$value',
-            //       style: Theme.of(context).textTheme.headlineMedium,
-            //     );
-            //   },
-            // ),
             ValueListenableBuilder(
               valueListenable: counter.count,
               builder: (context, value, child) {
