@@ -28,6 +28,7 @@ class _CounterAppState extends State<CounterApp> {
             ),
             ValueListenableBuilder(
               valueListenable: counter.count,
+              //valueListenable: counter.value,
               builder: (context, value, child) {
                 return Text(
                   '$value',
@@ -53,3 +54,20 @@ class _CounterAppState extends State<CounterApp> {
     );
   }
 }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+///
