@@ -4,7 +4,9 @@ class Counter {
   final ValueNotifier<int> count = ValueNotifier(0);
 
   void incrementCount() {
+    //using value setter from ValueNotifier
     //count.value++;
+    //or
     count.value = count.value + 1;
   }
 }

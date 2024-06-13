@@ -45,7 +45,7 @@ class _CounterAppState extends State<CounterApp> {
           //   counter.incrementCount();
           // });
 
-          //works with or w/o setstate aint useful here (BETTER)
+          //works with or w/o setstate, setstate aint useful here (BETTER)
           counter.incrementCount();
         },
         tooltip: 'Increment',

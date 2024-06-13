@@ -10,7 +10,7 @@ class ContactBook extends ValueNotifier<List<Contact>> {
   static final ContactBook _shared = ContactBook._sharedInstance();
   factory ContactBook() => _shared;
 
-  // //2. Create a contact storage (Delete) and replace with "value" from ValueNotifier
+  //2. Create a contact storage (Delete) and replace with "value" from ValueNotifier
   // final List<Contact> _contacts = [];
 
   //2. Expose the length of our contact
